@@ -1,0 +1,33 @@
+.card-main {
+  overflow: hidden;
+  height: 10rem;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.card-main img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-main h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-main p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-main .card-main-infos {
+  padding: 16px;
+}

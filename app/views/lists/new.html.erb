@@ -1,4 +1,8 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="new-list">
+  <h2>Add New List</h2>
+  <h2><i class="fa-solid fa-forward-fast"></i></h2>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, label: 'List name', label_html: { class: 'form-label' }, input: { class: 'form-control' }, placeholder: 'Classic' %>
+    <%= f.button :submit, "Create!", class: "btn btn-primary w-100 text-white fw-bold rounded-pill mt-3" %>
+  <% end %>
+</div>
