@@ -8,10 +8,10 @@
 
 <div class="container">
   <%= link_to "Add new list", new_list_path, class: "btn btn-outline-primary rounded-pill" %>
-  <div class="cards my-4">
+  <div class="cards-main my-4">
     <% @lists.each do |list| %>
       <div class="card-main">
-        <%= image_tag "movie.jpg" %>
+        <%= image_tag "play.svg" %>
         <div class="card-main-infos">
           <h2><%= list.name %></h2>
           <%= link_to "See list details", list_path(list), class: "text-decoration-none" %>

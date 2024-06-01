@@ -1,17 +1,20 @@
 .card-main {
   overflow: hidden;
-  height: 10rem;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 24px;
   border-radius: 12px;
+  height: 300px;
+  padding: 16px;
+  text-align: center;
 }
 
 .card-main img {
-  height: 100%;
-  width: 150px;
-  object-fit: cover;
+  height: 150px;
 }
 
 .card-main h2 {
@@ -28,6 +31,43 @@
   margin-top: 8px;
 }
 
-.card-main .card-main-infos {
-  padding: 16px;
+
+
+// Card movie
+.card-movie {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card-movie-infos {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 14rem;
+
+    .icon-rating {
+      color: rgb(255, 196, 0);
+    }
+  }
+
+  .movie-overview,
+  .movie-rating {
+    color: $light-gray;
+  }
+
+  .bookmark-delete {
+    color: rgb(255, 45, 112);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
 }

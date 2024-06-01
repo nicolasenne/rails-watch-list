@@ -16,12 +16,13 @@
 }
 
 .main-img {
-  width: 20rem;
+  width: 22rem;
 }
 
 //  List
+
 .list-banner {
-  background-image: asset-url('movie.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), asset-url('movie.jpg');
   background-size: cover;
   padding: 0 100px;
   height: 300px;

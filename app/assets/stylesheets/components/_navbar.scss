@@ -9,7 +9,12 @@
 
 .navbar-lewagon .navbar-brand {
   font-size: 2rem;
-  color: $dark-purple;
+  color: $purple;
+  transition: .4s;
+
+  &:hover {
+    color: $dark-purple;
+  }
 }
 
 .nav-link {

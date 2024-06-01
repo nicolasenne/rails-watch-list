@@ -3,27 +3,35 @@
     <h2><%= @list.name %></h2>
   </div>
 
-  <% @list.movies.each do |movie| %>
-    <%= movie.title %>
-    <%= movie.overview %>
-    <%= image_tag "#{movie.poster_url}" %>
-    <%= movie.poster_url %>
-  <% end %>
-  
-    
-
-  <h4>Bookmarked Movies</h4>
-  <ul class="list-group">
-    <% @list.bookmarks.each do |bookmark| %>
-      <li class="list-group-item">
-        <%= bookmark.comment %>
-        <%= link_to "Delete",
-          bookmark_path(bookmark),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-      </li>
+  <div class="d-flex justify-content-between align-items-center my-4">
+    <h4 class="m-0">Bookmarked Movies</h4>
+    <%= link_to "Add new movie", new_list_bookmark_path(@list), class: "btn btn-outline-primary rounded-pill" %>
+  </div>
+  <div class="cards-movie">
+    <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+      <div class="card-movie">
+        <%= image_tag "#{movie.poster_url}", alt: movie.title, class: "movie-img" %>
+        <div class="card-movie-infos">
+          <div>
+            <p><strong class="movie-title"><%= movie.title %></strong> - <small class="movie-rating"><%= movie.rating %> <i class="fa-solid fa-star icon-rating"></i></small></p>
+            <small class="movie-overview"><%= movie.overview%></small>
+          </div>
+          <div class="mt-auto">
+            <hr>
+            <ul class="list-group">
+              <li class="d-flex justify-content-between">
+                <p class="m-0"><i class="fa-solid fa-quote-left"></i> <small><%= bookmark.comment %></small></p>
+                <%= link_to "delete",
+                  bookmark_path(bookmark),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                  class: "bookmark-delete"
+                %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
-
-  <%= link_to "Bookmark", new_list_bookmark_path(@list) %>
+  </div>
 </div>

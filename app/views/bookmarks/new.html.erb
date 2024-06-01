@@ -1,7 +1,10 @@
-<h1>New bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie, as: :radio_buttons %>
-  <%= f.association :list %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="new-list">
+  <h2>Bookmark Movie</h2>
+  <h2><i class="fa-solid fa-bookmark"></i></h2>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.association :list, as: :radio_buttons, label: 'Choose a list', label_html: { class: 'form-label' } %>
+    <%= f.input :comment, label: 'Write a comment', label_html: { class: 'form-label' }, input: { class: 'form-control' }, placeholder: 'What did you think of the movie?' %>
+    <%= f.submit "Add bookmark!", class: "btn btn-primary w-100 text-white fw-bold rounded-pill mt-3" %>
+  <% end %>
+</div>
